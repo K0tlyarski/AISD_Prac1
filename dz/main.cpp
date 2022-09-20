@@ -106,8 +106,8 @@ public:
         List result;
         result.size = size + a.size;
         result.capacity = capacity + a.capacity;
-
-        result.array = new couple[result.capacity];
+        delete [] result.array;
+        result.array = new couple[result.size];
         for (int i = 0; i < size; i++)
         {
             strncpy(result.array[i].name, array[i].name, lengthOfName);
